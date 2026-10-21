@@ -35,9 +35,11 @@ website:
         - section: Synthesis
           contents: "lit-review/synthesis/*.md"
         - section: Papers
-          contents: "lit-review/papers/*.md"
+          href: lit-review/papers/README.md
+          contents: "lit-review/papers/[0-9]*.md"
         - section: Experiments
-          contents: "lit-review/experiments/**/*.md"
+          href: lit-review/experiments/README.md
+          contents: "lit-review/experiments/[0-9]*/README.md"
         - section: Sprints
           contents: "lit-review/sprints/**/*.md"
 
