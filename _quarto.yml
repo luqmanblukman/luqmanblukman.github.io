@@ -37,7 +37,7 @@ website:
         - section: Papers
           contents: "lit-review/papers/*.md"
         - section: Experiments
-          contents: "lit-review/experiments/*/README.md"
+          contents: "lit-review/experiments/**/*.md"
         - section: Sprints
           contents: "lit-review/sprints/**/*.md"
 
