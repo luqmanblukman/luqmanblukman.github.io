@@ -22,8 +22,15 @@ website:
       - href: about.qmd
         text: About
     right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/luqmanblukman/
+        aria-label: LinkedIn
+      - icon: medium
+        href: https://luqmanblukman.medium.com/
+        aria-label: Medium
       - icon: github
         href: https://github.com/luqthebatman
+        aria-label: GitHub
       - icon: rss
         href: index.xml
   sidebar:
