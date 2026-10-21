@@ -1,0 +1,13 @@
+---
+title: "Blog"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+page-layout: full
+title-block-banner: false
+---
+
+Currently running a 30-day experiment in PhD-style research. See the [literature review](lit-review/README.md).

@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "posts/**/*.md"
+    - "lit-review/**/*.md"
+    - "!lit-review/CLAUDE.md"
+    # _-prefixed files (templates) and dot-dirs (.claude/) are skipped by Quarto automatically
+
+website:
+  title: "Luqman B Lukman"
+  site-url: https://luqthebatman.github.io
+  repo-url: https://github.com/luqthebatman/luqthebatman.github.io
+  navbar:
+    left:
+      - href: index.qmd
+        text: Blog
+      - href: lit-review/README.md
+        text: Literature review
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/luqthebatman
+      - icon: rss
+        href: index.xml
+  sidebar:
+    - title: "Literature review"
+      contents:
+        - lit-review/README.md
+        - lit-review/PROTOCOL.md
+        - lit-review/reading-list.md
+        - section: Synthesis
+          contents: "lit-review/synthesis/*.md"
+        - section: Papers
+          contents: "lit-review/papers/*.md"
+        - section: Experiments
+          contents: "lit-review/experiments/*/README.md"
+        - section: Sprints
+          contents: "lit-review/sprints/**/*.md"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    bibliography: lit-review/references.bib
+    link-citations: true
+    filters:
+      - mermaid-fences.lua
+    include-after-body: mermaid.html

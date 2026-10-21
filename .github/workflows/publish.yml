@@ -1,0 +1,57 @@
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [lit-review-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out lit-review
+        uses: actions/checkout@v4
+        with:
+          repository: luqthebatman/lit-review
+          path: lit-review
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site
+        run: quarto render
+
+      - name: Render sprint decks as slides
+        run: |
+          shopt -s nullglob
+          for deck in lit-review/sprints/*/deck.md; do
+            out="_site/${deck%deck.md}slides.html"
+            npx --yes @marp-team/marp-cli@4.0.3 "$deck" -o "$out"
+          done
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

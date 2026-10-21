@@ -1,0 +1,3 @@
+# Defaults for every post. A post is posts/<YYYY-MM-DD>-<slug>/index.qmd
+freeze: true
+title-block-banner: true
