@@ -25,7 +25,7 @@ jobs:
       - name: Check out lit-review
         uses: actions/checkout@v4
         with:
-          repository: luqthebatman/lit-review
+          repository: luqmanblukman/lit-review
           path: lit-review
 
       - uses: quarto-dev/quarto-actions/setup@v2

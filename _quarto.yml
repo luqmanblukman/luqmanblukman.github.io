@@ -11,8 +11,8 @@ project:
 
 website:
   title: "Luqman B Lukman"
-  site-url: https://luqthebatman.github.io
-  repo-url: https://github.com/luqthebatman/luqthebatman.github.io
+  site-url: https://luqmanblukman.github.io
+  repo-url: https://github.com/luqmanblukman/luqmanblukman.github.io
   navbar:
     left:
       - href: index.qmd
@@ -29,7 +29,7 @@ website:
         href: https://luqmanblukman.medium.com/
         aria-label: Medium
       - icon: github
-        href: https://github.com/luqthebatman
+        href: https://github.com/luqmanblukman
         aria-label: GitHub
       - icon: rss
         href: index.xml
