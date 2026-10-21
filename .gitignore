@@ -1,5 +1,5 @@
 .DS_Store
 /.quarto/
 /_site/
-# Checked out by CI; a local symlink to ../lit-review for previews
+# Checked out by CI; locally a copy made by ./prepare-lit-review.sh ../lit-review
 /lit-review

@@ -30,6 +30,9 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Prepare lit-review
+        run: ./prepare-lit-review.sh
+
       - name: Render site
         run: quarto render
 

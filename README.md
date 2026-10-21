@@ -7,7 +7,7 @@ The **Literature review** section is pulled from [luqthebatman/lit-review](https
 ## Local preview
 
 ```sh
-ln -s ../lit-review lit-review   # once
+./prepare-lit-review.sh ../lit-review   # re-run after lit-review changes
 quarto preview
 ```
 

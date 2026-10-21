@@ -17,7 +17,7 @@ website:
     left:
       - href: index.qmd
         text: Blog
-      - href: lit-review/README.md
+      - href: lit-review/index.md
         text: Literature review
       - href: about.qmd
         text: About
@@ -29,19 +29,19 @@ website:
   sidebar:
     - title: "Literature review"
       contents:
-        - lit-review/README.md
+        - lit-review/index.md
         - lit-review/PROTOCOL.md
         - lit-review/reading-list.md
         - section: Synthesis
           contents: "lit-review/synthesis/*.md"
         - section: Papers
-          href: lit-review/papers/README.md
+          href: lit-review/papers/index.md
           contents: "lit-review/papers/[0-9]*.md"
         - section: Experiments
-          href: lit-review/experiments/README.md
-          contents: "lit-review/experiments/[0-9]*/README.md"
+          href: lit-review/experiments/index.md
+          contents: "lit-review/experiments/[0-9]*/index.md"
         - section: Sprints
-          href: lit-review/sprints/README.md
+          href: lit-review/sprints/index.md
           contents: "lit-review/sprints/sprint-*/*.md"
 
 format:
