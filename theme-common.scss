@@ -1,0 +1,44 @@
+/*-- scss:rules --*/
+// "Index" layout (heavy sans headlines, lots of white space, one accent)
+// with "Lab notebook" type (IBM Plex Sans, metadata in IBM Plex Mono).
+
+body { line-height: 1.65; }
+
+h1, h2, h3, .title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+h1.title { font-size: 2.6rem; line-height: 1.05; }
+h2 { margin-top: 2.5rem; border-bottom: 0; }
+
+// Navbar: flat, same ground as the page, no rule
+.navbar { border-bottom: 0; box-shadow: none; padding-block: 1.25rem; }
+.navbar-brand .navbar-title { font-weight: 700; letter-spacing: -0.02em; }
+
+// Metadata, dates, categories, sidebar sections: mono, small, muted
+.quarto-title-meta, .listing-date, .listing-reading-time, .listing-categories,
+.quarto-category, .listing-category, .sidebar-section .sidebar-item-text.sidebar-link-text,
+.quarto-listing .metadata, #TOC .toc-title, .sidebar-title {
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.quarto-category, .listing-category {
+  border: 0;
+  padding: 0;
+  color: $primary;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.listing-date { color: $text-muted; font-variant-numeric: tabular-nums; }
+
+// Tables (reading list) and numbers line up
+table { font-variant-numeric: tabular-nums; }
+th { font-family: $font-family-monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+
+// Quotes and callouts: single accent rule
+blockquote { border-left: 2px solid $primary; color: inherit; padding-left: 1.1rem; font-weight: 300; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }

@@ -47,8 +47,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [cosmo, theme-light.scss, theme-common.scss]
+      dark: [darkly, theme-dark.scss, theme-common.scss]
     toc: true
     bibliography: lit-review/references.bib
     link-citations: true
