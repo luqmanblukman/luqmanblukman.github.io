@@ -44,6 +44,14 @@ jobs:
             npx --yes @marp-team/marp-cli@4.0.3 "$deck" -o "$out"
           done
 
+      # Review copy: download from the run page, unzip, open index.html.
+      # The deploy job waits for approval on the github-pages environment.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site
+          retention-days: 14
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
