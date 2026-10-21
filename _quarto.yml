@@ -41,7 +41,8 @@ website:
           href: lit-review/experiments/README.md
           contents: "lit-review/experiments/[0-9]*/README.md"
         - section: Sprints
-          contents: "lit-review/sprints/**/*.md"
+          href: lit-review/sprints/README.md
+          contents: "lit-review/sprints/sprint-*/*.md"
 
 format:
   html:
