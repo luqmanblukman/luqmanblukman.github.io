@@ -1,44 +1,208 @@
 /*-- scss:rules --*/
-// "Index" layout (heavy sans headlines, lots of white space, one accent)
-// with "Lab notebook" type (IBM Plex Sans, metadata in IBM Plex Mono).
+// Ruled-grid design: thin rules and tick marks frame lists and the home page;
+// articles stay a plain reading column. Geist for text, IBM Plex Mono for labels and data.
 
-body { line-height: 1.65; }
-
-h1, h2, h3, .title {
-  font-weight: 700;
-  letter-spacing: -0.03em;
+body { line-height: 1.6; font-weight: 400; }
+h1, h2, h3, h4, .title {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   text-wrap: balance;
 }
-h1.title { font-size: 2.6rem; line-height: 1.05; }
+h1.title { font-size: clamp(2rem, 4vw, 2.75rem); }
 h2 { margin-top: 2.5rem; border-bottom: 0; }
+a { text-underline-offset: 3px; }
 
-// Navbar: flat, same ground as the page, no rule
-.navbar { border-bottom: 0; box-shadow: none; padding-block: 1.25rem; }
-.navbar-brand .navbar-title { font-weight: 700; letter-spacing: -0.02em; }
+@mixin mono-label {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+.eyebrow { @include mono-label; }
 
-// Metadata, dates, categories, sidebar sections: mono, small, muted
-.quarto-title-meta, .listing-date, .listing-reading-time, .listing-categories,
-.quarto-category, .listing-category, .sidebar-section .sidebar-item-text.sidebar-link-text,
-.quarto-listing .metadata, #TOC .toc-title, .sidebar-title {
+// ---------- disclaimer ticker (every page) ----------
+.ticker {
+  overflow: hidden;
+  background: $body-color;
+  color: $body-bg;
+  font: 500 11px/1 $font-family-monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  > div { display: inline-flex; gap: 28px; padding: 8px 0; animation: ticker 60s linear infinite; }
+}
+@keyframes ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker > div { animation: none; } }
+
+// ---------- navbar ----------
+.navbar { border-bottom: 1px solid $rule; box-shadow: none; padding-block: 0.6rem; }
+.navbar-brand .navbar-title { font-weight: 600; letter-spacing: -0.01em; }
+.navbar .nav-link { font-size: 0.9rem; }
+.navbar .nav-link.active { text-decoration: underline; text-underline-offset: 5px; }
+
+// ---------- metadata, sidebar, tables ----------
+.quarto-title-meta-heading, #TOC .toc-title, .sidebar-section > .sidebar-item-container .sidebar-item-text,
+th { @include mono-label; }
+.quarto-title-meta-contents, .listing-date, .quarto-title .quarto-categories {
   font-family: $font-family-monospace;
   font-size: 0.78rem;
-  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
-.quarto-category, .listing-category {
-  border: 0;
-  padding: 0;
-  color: $primary;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.quarto-category {
+  @include mono-label;
+  border: 1px solid $rule;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 0.66rem;
+  opacity: 1;
 }
-.listing-date { color: $text-muted; font-variant-numeric: tabular-nums; }
+#quarto-sidebar { border-right: 1px solid $rule; }
+.sidebar-item-text { font-size: 0.88rem; }
 
-// Tables (reading list) and numbers line up
-table { font-variant-numeric: tabular-nums; }
-th { font-family: $font-family-monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+table { font-variant-numeric: tabular-nums; border: 1px solid $rule; }
+table th { background: $surface; border-bottom: 1px solid $rule !important; padding: 0.6rem 0.85rem !important; }
+table td { border-color: $rule !important; padding: 0.8rem 0.85rem !important; }
 
-// Quotes and callouts: single accent rule
-blockquote { border-left: 2px solid $primary; color: inherit; padding-left: 1.1rem; font-weight: 300; }
+blockquote { border-left: 2px solid $body-color; padding-left: 1.1rem; color: inherit; }
+pre, code { border-radius: 4px; }
 
-a { text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
+// ---------- articles: calm reading column ----------
+#quarto-document-content > p, #quarto-document-content > ul, #quarto-document-content > ol {
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+// ---------- home page components ----------
+.home-hero {
+  position: relative;
+  border: 1px solid $rule;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 90% at 85% 10%, $mist-b, transparent 70%),
+    radial-gradient(50% 80% at 10% 100%, $mist-a, transparent 70%),
+    $body-bg;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient($rule 1px, transparent 1px), linear-gradient(90deg, $rule 1px, transparent 1px);
+    background-size: 96px 96px;
+    opacity: 0.45;
+    mask-image: linear-gradient(90deg, transparent 30%, #000 85%);
+  }
+  .inner { position: relative; display: grid; gap: 1.1rem; padding: 3.5rem clamp(1rem, 4vw, 2.5rem) 3rem; max-width: 760px; }
+  h1 { margin: 0; font-size: clamp(2.1rem, 5vw, 3.25rem); line-height: 1.04; }
+  p { margin: 0; font-size: 1.06rem; color: $text-muted; max-width: 52ch; }
+}
+.btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.btn-ruled {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid $body-color;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: $body-color;
+  &.solid { background: $body-color; color: $body-bg; }
+  &:hover { text-decoration: none; opacity: 0.85; }
+}
+
+.home-section { margin-top: 2.75rem; display: grid; gap: 1.1rem; }
+.home-section-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 1.25rem;
+  h2 { margin: 0; font-size: 1.9rem; }
+  p { margin: 0; }
+  a { font-size: 0.9rem; }
+}
+
+// ruled cells with tick marks at the crossings
+.ruled-cells {
+  border: 1px solid $rule;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.ruled-cell {
+  position: relative;
+  padding: 1.1rem 1.25rem;
+  border-right: 1px solid $rule;
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+  &:last-child { border-right: 0; }
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 9px; height: 9px;
+    right: -5px; bottom: -5px;
+    background:
+      linear-gradient($body-color, $body-color) center / 1px 100% no-repeat,
+      linear-gradient($body-color, $body-color) center / 100% 1px no-repeat;
+    z-index: 1;
+  }
+}
+.stat {
+  font-size: 1.75rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2;
+  font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
+  .of { font: 0.8rem $font-family-monospace; color: $text-muted; letter-spacing: 0; }
+}
+.meter { height: 6px; background: $surface; border: 1px solid $rule; span { display: block; height: 100%; background: $acid; } }
+
+// post rows (custom listing template)
+.rows { margin: 0; padding: 0; list-style: none; border: 1px solid $rule; }
+.rows li {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) auto;
+  gap: 0.3rem 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border-top: 1px solid $rule;
+  align-items: baseline;
+  &:first-child { border-top: 0; }
+}
+.rows .when { font: 0.8rem $font-family-monospace; color: $text-muted; font-variant-numeric: tabular-nums; }
+.rows .t { font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; }
+.rows .t:hover { text-decoration: underline; }
+.rows .sub { grid-column: 2; font-size: 0.88rem; color: $text-muted; }
+.tags { display: flex; gap: 0.35rem; flex-wrap: wrap; justify-content: end; }
+.tag {
+  @include mono-label;
+  font-size: 0.64rem;
+  border: 1px solid $rule;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  &.hl { background: $acid; color: $on-acid; border-color: $acid; }
+}
+
+// experiment panel
+.split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); border: 1px solid $rule; }
+.split > div { padding: 1.6rem 1.5rem; display: grid; gap: 0.75rem; align-content: start; }
+.split > div + div { border-left: 1px solid $rule; background: $surface; }
+.split h3 { margin: 0; font-size: 1.4rem; }
+.split p { margin: 0; color: $text-muted; max-width: 52ch; }
+.term {
+  background: #161514;
+  color: #e8e6e1;
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  font: 0.78rem/1.7 $font-family-monospace;
+  overflow-x: auto;
+  .k { color: #9b968f; }
+  .g { color: #b8c94a; }
+  .bar { display: inline-block; height: 9px; vertical-align: middle; background: $acid; }
+  .rest { opacity: 0.35; }
+}
+
+@media (max-width: 720px) {
+  .rows li { grid-template-columns: minmax(0, 1fr); }
+  .rows .sub { grid-column: 1; }
+  .tags { justify-content: start; }
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split > div + div { border-left: 0; border-top: 1px solid $rule; }
+  .ruled-cell { border-right: 0; border-bottom: 1px solid $rule; }
+  .ruled-cell:last-child { border-bottom: 0; }
+  .ruled-cell:not(:last-child)::after { right: auto; left: -5px; }
+}

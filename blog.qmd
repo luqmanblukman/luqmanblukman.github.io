@@ -1,0 +1,12 @@
+---
+title: "Writing"
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date desc"
+  template: _listing-rows.ejs
+  date-format: "YYYY-MM-DD"
+  fields: [date, title, categories, original]
+  feed: true
+---

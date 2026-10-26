@@ -1,18 +1,26 @@
 /*-- scss:defaults --*/
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
-$font-family-sans-serif: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: "Geist", "Helvetica Neue", Arial, sans-serif;
 $font-family-monospace: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-$body-bg: #121212;
-$body-color: #ececec;
-$text-muted: #9a9a9a;
-$primary: #e07a84;
-$link-color: #e07a84;
-$border-color: #2a2a2a;
-$code-color: #e07a84;
+$body-bg: #131211;
+$body-color: #ecebe7;
+$text-muted: #9b968f;
+$surface: #1b1a18;
+$rule: #34312d;
+$acid: #e4f222;
+$on-acid: #131211;
+$mist-a: #1d1c1a;
+$mist-b: #191c1f;
+
+$primary: $body-color;
+$link-color: $body-color;
+$border-color: $rule;
+$code-color: $body-color;
+$code-bg: $surface;
 
 $navbar-bg: $body-bg;
-$navbar-fg: #9a9a9a;
-$navbar-hl: #ececec;
+$navbar-fg: $body-color;
+$navbar-hl: $body-color;
 $footer-bg: $body-bg;

@@ -18,3 +18,6 @@ find lit-review -name README.md -not -path '*/_*' | while read -r f; do
 done
 find lit-review -name '*.md' -not -path '*/_*' -exec sed -i.bak -E 's#\(([^)]*/)?README\.md\)#(\1index.md)#g' {} +
 find lit-review -name '*.md.bak' -delete
+
+# Home page status (also re-run by the pre-render hook)
+python3 scripts/status.py

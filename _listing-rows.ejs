@@ -1,0 +1,10 @@
+<ul class="rows">
+<% for (const item of items) { %>
+  <li <%= metadataAttrs(item) %>>
+    <span class="when"><%= item.date %></span>
+    <a class="t" href="<%- item.path %>"><%= item.title %></a>
+    <span class="tags"><% for (const c of (item.categories || []).slice(0, 2)) { %><span class="tag"><%= c %></span><% } %></span>
+    <% if (item.original) { %><span class="sub">Originally published on <%= item.original %></span><% } %>
+  </li>
+<% } %>
+</ul>

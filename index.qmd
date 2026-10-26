@@ -1,13 +1,63 @@
 ---
-title: "Blog"
+pagetitle: "Luqman B Lukman"
+page-layout: full
+toc: false
 listing:
+  id: latest-posts
   contents: posts
   sort: "date desc"
-  type: default
-  categories: true
-  feed: true
-page-layout: full
-title-block-banner: false
+  max-items: 5
+  template: _listing-rows.ejs
+  date-format: "YYYY-MM-DD"
+  fields: [date, title, categories, original]
 ---
 
-Currently running a 30-day experiment in PhD-style research. See the [literature review](lit-review/index.md).
+<!-- TODO(Luqman): the hero eyebrow, headline and intro below are placeholders. Write your own. -->
+
+```{=html}
+<section class="home-hero"><div class="inner">
+  <div class="eyebrow">Backend engineer · Applied AI × distributed systems</div>
+  <h1>Notes on software, writing, and a 30-day trial run at research.</h1>
+  <p>I build backend systems for a living. This is where I write about the work and keep a public record of the papers I'm reading.</p>
+  <div class="btns"><a class="btn-ruled solid" href="blog.html">Read the blog</a><a class="btn-ruled" href="lit-review/">Literature review</a></div>
+</div></section>
+```
+
+::: {.home-section}
+{{< include _generated/status.md >}}
+:::
+
+::: {.home-section}
+::: {.home-section-head}
+## Writing
+
+[All posts →](blog.qmd)
+:::
+
+::: {#latest-posts}
+:::
+:::
+
+::: {.home-section}
+::: {.home-section-head}
+## The experiment
+
+[Read the protocol →](lit-review/PROTOCOL.md)
+:::
+
+<!-- TODO(Luqman): placeholder copy for the experiment panel. -->
+
+::: {.split}
+::: {}
+[30 days · 1.5 h a day · two sprints]{.eyebrow}
+
+### Can I do PhD-style research, and do I actually want to?
+
+Every paper, research question and failed experiment is kept in public. The reflections and the pass/fail criteria stay private until Day 30.
+:::
+
+::: {}
+{{< include _generated/terminal.md >}}
+:::
+:::
+:::

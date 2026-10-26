@@ -2,6 +2,7 @@
 title: "Coding was never the job"
 date: 2026-06-19
 categories: [software-engineering, ai-agent, ai, generative-ai-tools]
+original: Medium
 include-in-header:
   text: '<link rel="canonical" href="https://luqmanblukman.medium.com/coding-was-never-the-job-c8de3cc2616e">'
 ---

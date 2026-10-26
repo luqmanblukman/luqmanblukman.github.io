@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  pre-render: scripts/status.py
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
@@ -15,7 +16,7 @@ website:
   repo-url: https://github.com/luqmanblukman/luqmanblukman.github.io
   navbar:
     left:
-      - href: index.qmd
+      - href: blog.qmd
         text: Blog
       - href: lit-review/index.md
         text: Literature review
@@ -32,7 +33,8 @@ website:
         href: https://github.com/luqmanblukman
         aria-label: GitHub
       - icon: rss
-        href: index.xml
+        href: blog.xml
+        aria-label: RSS feed
   sidebar:
     - title: "Literature review"
       contents:
@@ -61,4 +63,5 @@ format:
     link-citations: true
     filters:
       - mermaid-fences.lua
+    include-before-body: _ticker.html
     include-after-body: mermaid.html

@@ -2,6 +2,7 @@
 title: "4 Reasons Why Software Engineers Need To Be Better Writers"
 date: 2023-07-21
 categories: [software-engineering]
+original: Medium
 include-in-header:
   text: '<link rel="canonical" href="https://luqmanblukman.medium.com/4-reasons-why-software-engineers-need-to-be-better-writers-7f835daece01">'
 ---

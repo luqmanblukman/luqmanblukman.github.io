@@ -1,0 +1,11 @@
+<div class="ticker" role="note" aria-label="All views are my own"><div aria-hidden="true">
+  <span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span>
+  <span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span><span>All views are my own</span><span>·</span>
+</div></div>
+<script>
+  // Quarto places before-body includes inside the page content; lift the ticker above the navbar.
+  (function () {
+    var t = document.currentScript.previousElementSibling;
+    if (t && t.classList.contains("ticker")) document.body.insertBefore(t, document.body.firstChild);
+  })();
+</script>

@@ -5,3 +5,4 @@
 /lit-review
 
 **/*.quarto_ipynb
+/_generated/
