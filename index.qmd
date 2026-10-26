@@ -2,6 +2,7 @@
 pagetitle: "Luqman B Lukman"
 page-layout: full
 toc: false
+anchor-sections: false
 listing:
   id: latest-posts
   contents: posts
@@ -24,10 +25,6 @@ listing:
 ```
 
 ::: {.home-section}
-{{< include _generated/status.md >}}
-:::
-
-::: {.home-section}
 ::: {.home-section-head}
 ## Writing
 
@@ -44,6 +41,8 @@ listing:
 
 [Read the protocol →](lit-review/PROTOCOL.md)
 :::
+
+{{< include _generated/status.md >}}
 
 <!-- TODO(Luqman): placeholder copy for the experiment panel. -->
 
