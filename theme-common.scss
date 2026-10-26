@@ -206,3 +206,69 @@ pre, code { border-radius: 4px; }
   .ruled-cell:last-child { border-bottom: 0; }
   .ruled-cell:not(:last-child)::after { right: auto; left: -5px; }
 }
+
+// ---------- About: Human / Agent switch ----------
+.view-switch {
+  display: inline-flex;
+  border: 1px solid $rule;
+  border-radius: 4px;
+  padding: 3px;
+  gap: 3px;
+  margin-bottom: 1.75rem;
+  button {
+    font: 500 0.72rem $font-family-monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 3px;
+    padding: 0.4rem 0.9rem;
+    background: transparent;
+    color: $text-muted;
+    cursor: pointer;
+    &[aria-pressed="true"] { background: $body-color; color: $body-bg; }
+    &:focus-visible { outline: 2px solid $body-color; outline-offset: 2px; }
+  }
+}
+
+// ---------- About: carousel ----------
+.carousel { border: 1px solid $rule; margin-bottom: 2rem; }
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+  &:focus-visible { outline: 2px solid $body-color; outline-offset: -2px; }
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin: 0;
+  img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; max-width: 100%; }
+  figcaption {
+    font: 0.75rem $font-family-monospace;
+    color: $text-muted;
+    padding: 0.6rem 1rem;
+    margin: 0;
+    border-top: 1px solid $rule;
+  }
+}
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid $rule;
+  button {
+    border: 0;
+    background: transparent;
+    color: $body-color;
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover { background: $surface; }
+    &:focus-visible { outline: 2px solid $body-color; outline-offset: -2px; }
+  }
+  .carousel-prev { border-right: 1px solid $rule; }
+  .carousel-next { border-left: 1px solid $rule; }
+}
+.carousel-count { font: 0.75rem $font-family-monospace; color: $text-muted; font-variant-numeric: tabular-nums; }
