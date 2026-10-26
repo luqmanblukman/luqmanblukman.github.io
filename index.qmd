@@ -50,7 +50,7 @@ listing:
 ::: {}
 [30 days · 1.5 h a day · two sprints]{.eyebrow}
 
-### Can I do PhD-style research, and do I actually want to?
+### [Can I do PhD-style research, and do I actually want to?](posts/2026-10-26-can-i-do-phd-style-research/index.md)
 
 Every paper, research question and failed experiment is kept in public. The reflections and the pass/fail criteria stay private until Day 30.
 :::

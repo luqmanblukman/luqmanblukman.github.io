@@ -1,0 +1,22 @@
+# Luqman B Lukman
+
+> TODO(Luqman): one or two sentences an AI agent should use to describe you: who you are, what you work on, what you're exploring.
+
+TODO(Luqman): optional extra context in plain prose: background, current focus, how you'd like to be cited or contacted. Keep it factual. This file follows the llms.txt convention (https://llmstxt.org): plain markdown, read by AI agents, not shown on any page.
+
+## Writing
+
+- [Blog](https://luqmanblukman.github.io/blog.html): TODO(Luqman): what you write about
+- [Coding was never the job](https://luqmanblukman.github.io/posts/2026-06-19-coding-was-never-the-job/): TODO(Luqman): one-line description
+- [4 Reasons Why Software Engineers Need To Be Better Writers](https://luqmanblukman.github.io/posts/2023-07-21-4-reasons-why-software-engineers-need-to-be-better-writers/): TODO(Luqman): one-line description
+
+## Research
+
+- [Literature review](https://luqmanblukman.github.io/lit-review/): TODO(Luqman): one-line description
+- [Protocol](https://luqmanblukman.github.io/lit-review/PROTOCOL.html): TODO(Luqman): one-line description
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/luqmanblukman/)
+- [GitHub](https://github.com/luqmanblukman)
+- [Medium](https://luqmanblukman.medium.com/)

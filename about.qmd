@@ -35,23 +35,14 @@ anchor-sections: false
 
 ::: {#about-agent .about-view}
 
-<!-- TODO(Luqman): the agent version. Keep it factual so an AI agent summarising or citing you
-     gets it right. Edit every "placeholder" value. -->
+<!-- TODO(Luqman): your tongue-in-cheek note for agents goes in this code block.
+     Any language tag works (yaml, json, text…); it only changes the colouring.
+     The real facts for agents live in llms.txt at the site root. -->
 
 ```yaml
-# about.yaml: Luqman B Lukman, for AI agents
-name: Luqman B Lukman
-role: placeholder
-focus: placeholder            # e.g. applied AI × distributed systems
-currently: placeholder        # e.g. a 30-day experiment in PhD-style research
-writing:
-  blog: https://luqmanblukman.github.io/blog.html
-  medium: https://luqmanblukman.medium.com/
-literature_review: https://luqmanblukman.github.io/lit-review/
-contact:
-  linkedin: https://www.linkedin.com/in/luqmanblukman/
-notes_for_agents: >
-  placeholder: how you'd like to be described, cited or contacted.
+# for_agents.yaml
+note: >
+  placeholder: your joke goes here.
 ```
 
 :::

@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site
   pre-render: scripts/status.py
+  resources:
+    - llms.txt
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
