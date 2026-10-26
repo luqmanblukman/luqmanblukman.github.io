@@ -230,45 +230,28 @@ pre, code { border-radius: 4px; }
   }
 }
 
-// ---------- About: carousel ----------
-.carousel { border: 1px solid $rule; margin-bottom: 2rem; }
-.carousel-track {
+// ---------- About: photo strip (flows continuously, pauses on hover or focus) ----------
+.photo-strip {
+  overflow: hidden;
+  border-block: 1px solid $rule;
+  padding-block: 1rem;
+  margin-bottom: 2rem;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.photo-strip-track {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
-  &:focus-visible { outline: 2px solid $body-color; outline-offset: -2px; }
+  gap: 1rem;
+  width: max-content;
+  animation: photo-strip 45s linear infinite;
+  figure { margin: 0; flex: 0 0 auto; display: grid; gap: 0.4rem; }
+  img { height: 240px; width: auto; aspect-ratio: 3 / 2; object-fit: cover; display: block; border: 1px solid $rule; }
+  figcaption { font: 0.72rem $font-family-monospace; color: $text-muted; }
 }
-.carousel-slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  margin: 0;
-  img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; max-width: 100%; }
-  figcaption {
-    font: 0.75rem $font-family-monospace;
-    color: $text-muted;
-    padding: 0.6rem 1rem;
-    margin: 0;
-    border-top: 1px solid $rule;
-  }
+.photo-strip:hover .photo-strip-track,
+.photo-strip:focus-within .photo-strip-track { animation-play-state: paused; }
+@keyframes photo-strip { to { transform: translateX(calc(-50% - 0.5rem)); } }
+@media (prefers-reduced-motion: reduce) {
+  .photo-strip { overflow-x: auto; mask-image: none; }
+  .photo-strip-track { animation: none; }
 }
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid $rule;
-  button {
-    border: 0;
-    background: transparent;
-    color: $body-color;
-    padding: 0.5rem 1.1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    &:hover { background: $surface; }
-    &:focus-visible { outline: 2px solid $body-color; outline-offset: -2px; }
-  }
-  .carousel-prev { border-right: 1px solid $rule; }
-  .carousel-next { border-left: 1px solid $rule; }
-}
-.carousel-count { font: 0.75rem $font-family-monospace; color: $text-muted; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) { .photo-strip-track img { height: 180px; } }
