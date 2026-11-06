@@ -13,16 +13,18 @@ anchor-sections: false
 
 ::: {#about-human .about-view}
 
-<!-- TODO(Luqman): photo strip. Replace each file in assets/about/ with your own photo,
-     update src/alt/caption below, and add or remove <figure> lines. The strip loops by itself. -->
+<!-- Logo wall: two rows, bottom row offset by half a tile. Add or remove <img> lines in either row;
+     the script repeats each row enough to fill the width and loop seamlessly. -->
 
 ```{=html}
-<div class="photo-strip" aria-label="Photos">
-  <div class="photo-strip-track">
-    <figure><img src="assets/about/photo-1.svg" alt="Placeholder photo 1"><figcaption>Caption for photo 1</figcaption></figure>
-    <figure><img src="assets/about/photo-2.svg" alt="Placeholder photo 2"><figcaption>Caption for photo 2</figcaption></figure>
-    <figure><img src="assets/about/photo-3.svg" alt="Placeholder photo 3"><figcaption>Caption for photo 3</figcaption></figure>
-    <figure><img src="assets/about/photo-4.svg" alt="Placeholder photo 4"><figcaption>Caption for photo 4</figcaption></figure>
+<div class="logo-wall" aria-label="Companies I have worked at">
+  <div class="logo-wall-row">
+    <img src="assets/about/jpmorgan.svg" alt="J.P. Morgan">
+    <img src="assets/about/shopee.svg" alt="Shopee">
+  </div>
+  <div class="logo-wall-row">
+    <img src="assets/about/tiktok.svg" alt="TikTok">
+    <img src="assets/about/airwallex.png" alt="Airwallex">
   </div>
 </div>
 ```
@@ -65,14 +67,30 @@ The power of code compels you!
   });
   show(location.hash === "#agent" ? "agent" : "human");
 
-  // Photo strip: duplicate the set once so the CSS animation can loop seamlessly.
-  document.querySelectorAll(".photo-strip-track").forEach(function (track) {
-    Array.prototype.slice.call(track.children).forEach(function (fig) {
-      var copy = fig.cloneNode(true);
-      copy.setAttribute("aria-hidden", "true");
-      track.appendChild(copy);
+  // Logo wall: repeat each row's logos until one set is wider than the screen, then double it
+  // so the CSS animation (-50%) loops seamlessly. Every row gets the same number of tiles, so
+  // the rows stay equally wide, scroll at the same speed and keep their brick offset.
+  var rows = document.querySelectorAll(".logo-wall-row");
+  if (rows.length) {
+    var wall = rows[0].parentElement;
+    var tile = parseFloat(getComputedStyle(wall).getPropertyValue("--tile-w")) || 220;
+    // A set must be a whole number of every row's logo list, or the two halves won't match.
+    var gcd = function (a, b) { return b ? gcd(b, a % b) : a; };
+    var unit = Array.prototype.reduce.call(rows, function (m, r) {
+      var n = r.children.length || 1;
+      return m * n / gcd(m, n);
+    }, 1);
+    var perSet = Math.ceil((Math.max(screen.width, window.innerWidth) / tile + 1) / unit) * unit;
+    rows.forEach(function (row) {
+      var originals = Array.prototype.slice.call(row.children);
+      for (var i = originals.length; i < perSet * 2; i++) {
+        var copy = originals[i % originals.length].cloneNode(true);
+        copy.setAttribute("aria-hidden", "true");
+        copy.alt = "";
+        row.appendChild(copy);
+      }
     });
-  });
+  }
 })();
 </script>
 ```
