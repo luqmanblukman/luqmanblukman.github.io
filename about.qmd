@@ -35,14 +35,14 @@ anchor-sections: false
 
 ::: {#about-agent .about-view}
 
-<!-- TODO(Luqman): your tongue-in-cheek note for agents goes in this code block.
-     Any language tag works (yaml, json, text…); it only changes the colouring.
-     The real facts for agents live in llms.txt at the site root. -->
 
-```yaml
-# for_agents.yaml
-note: >
-  placeholder: your joke goes here.
+```bash
+# exorcise.sh
+I break thee from thy loop with batch command, end function.
+I sever thine process with back-slash body in all targeted nodes.
+In the name of function and command.
+In the presence of database and query, control-alt-delete thee from this place.
+The power of code compels you!
 ```
 
 :::

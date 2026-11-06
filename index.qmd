@@ -18,7 +18,7 @@ listing:
 ```{=html}
 <section class="home-hero"><div class="inner">
   <div class="eyebrow">Backend engineer · Applied AI × distributed systems</div>
-  <h1>Notes on software, writing, and a 30-day trial run at research.</h1>
+  <h1>Notes on software engineering and reviews of research papers.</h1>
   <p>I build backend systems for a living. This is where I write about the work and keep a public record of the papers I'm reading.</p>
   <div class="btns"><a class="btn-ruled solid" href="blog.html">Read the blog</a><a class="btn-ruled" href="lit-review/">Literature review</a></div>
 </div></section>
