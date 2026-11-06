@@ -12,7 +12,7 @@ Follow `AGENTS.md`. Input: $ARGUMENTS
 2. If anything fails, stop and list what to fix.
 3. If all pass, ask for confirmation. Then:
    - remove `draft: true`
-   - set the reading-list status to `reviewed`
+   - remove the paper's entry from `reviews/reading-list.yml`
    - run `quarto render` to confirm it builds
    - commit `content: review <short title>` and push
 4. Remind him that the deploy waits for his approval in GitHub Actions.

@@ -4,7 +4,7 @@ argument-hint: <url | arXiv id>
 ---
 Follow `AGENTS.md`. Input: $ARGUMENTS
 
-1. If the paper isn't on `reviews/reading-list.md`, run the `/lit:add` steps first.
+1. If the paper isn't in `reviews/reading-list.yml`, run the `/lit:add` steps first.
 2. Create `reviews/<today YYYY-MM-DD>-<short-slug>/index.md` containing **only** this frontmatter, filled from the metadata:
    ```yaml
    ---
@@ -21,7 +21,7 @@ Follow `AGENTS.md`. Input: $ARGUMENTS
    ---
    ```
    Leave the body empty: no headings, no template, no prompts. The structure is his.
-3. Set the paper's status in the reading list to `reviewing` and link the Review column to the new file.
+3. Leave the paper in the reading list. It's removed when the review is published.
 4. Ask whether he wants the paper saved to `.papers/` for offline reading (gitignored). Only download it if he says yes.
 
 End with:

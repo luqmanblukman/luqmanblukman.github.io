@@ -130,6 +130,7 @@ pre, code { border-radius: 4px; }
   align-items: baseline;
   &:first-child { border-top: 0; }
 }
+.rows .why { grid-column: 2 / -1; margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.6; max-width: 68ch; }
 .rows li.empty { display: block; color: $text-muted; font-size: 0.95rem; }
 .rows .when { font: 0.8rem $font-family-monospace; color: $text-muted; font-variant-numeric: tabular-nums; }
 .rows .t { font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; }
@@ -148,7 +149,7 @@ pre, code { border-radius: 4px; }
 
 @media (max-width: 720px) {
   .rows li { grid-template-columns: minmax(0, 1fr); }
-  .rows .sub { grid-column: 1; }
+  .rows .sub, .rows .why { grid-column: 1; }
   .tags { justify-content: start; }
 }
 

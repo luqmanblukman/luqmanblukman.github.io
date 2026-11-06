@@ -2,13 +2,34 @@
 title: "Paper reviews"
 page-layout: full
 toc: false
+anchor-sections: false
 listing:
-  contents: "*/index.md"
-  sort: "date desc"
-  template: ../_listing-rows.ejs
-  date-format: "YYYY-MM-DD"
-  fields: [date, title, categories, venue]
-  feed: true
+  - id: reviews
+    contents: "*/index.md"
+    sort: "date desc"
+    template: ../_listing-rows.ejs
+    date-format: "YYYY-MM-DD"
+    fields: [date, title, categories, venue]
+    feed: true
+  - id: reading-list
+    contents: reading-list.yml
+    sort: "added desc"
+    template: ../_listing-queue.ejs
+    fields: [title, authors, venue, added, why]
 ---
 
-One paper per review: what it claims, whether the evidence holds up, and what I'd test next. See also the [reading list](reading-list.md).
+One paper per review: what it claims, whether the evidence holds up, and what I'd test next.
+
+::: {#reviews}
+:::
+
+::: {.home-section}
+::: {.home-section-head}
+## Reading list
+:::
+
+Papers I plan to review next, and why each one is on the list.
+
+::: {#reading-list}
+:::
+:::

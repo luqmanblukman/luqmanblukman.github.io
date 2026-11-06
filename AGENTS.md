@@ -67,7 +67,7 @@ Use this to find **gaps** in a finished review. It is not a required structure: 
 
 - Reviews: `reviews/<YYYY-MM-DD>-<slug>/index.md`, with optional `code/`, notebooks and figures alongside. Frontmatter: `title`, `paper_title`, `authors`, `venue` (e.g. "arXiv 2026"), `link`, `code_data`, `area`, `date` (date reviewed), `categories: [paper-review, <area>]`, `draft: true` until published.
 - Essays: `posts/<YYYY-MM-DD>-<slug>/index.md`.
-- Reading list: `reviews/reading-list.md`. Status `queued` → `reviewing` → `reviewed`. The "Why" column is always Luqman's words.
+- Reading list: `reviews/reading-list.yml`, shown at the bottom of the Paper reviews page. Fields: `title`, `authors`, `venue`, `path` (paper link), `added`, `why`. `why` is optional; when present it is always Luqman's words. An entry is removed when its review is published.
 - BibTeX: `references.bib`, keys `<firstauthor><year><firstword>` (e.g. `jayaram2026towards`). Cite with `[@key]`.
 - Papers for local reading go in `.papers/` (gitignored). Never commit a paper PDF.
 - Diagrams: Mermaid. Commits: semantic prefixes (`docs:`, `feat:`, `fix:`, `content:`).

@@ -1,0 +1,6 @@
+<% /* Reading list rows. Keep each <li> on one line (see _listing-rows.ejs). */ %>
+<ul class="rows queue">
+<% if (items.length === 0) { %><li class="empty">Nothing queued right now.</li>
+<% } %><% for (const item of items) { %><li <%= metadataAttrs(item) %>><span class="when"><%= item.added %></span><a class="t" href="<%- item.path %>"><%= item.title %></a><span class="tags"><span class="tag">queued</span></span><span class="sub"><%= item.authors %><% if (item.venue) { %> · <%= item.venue %><% } %></span><% if (item.why) { %><p class="why"><%= item.why %></p><% } %></li>
+<% } %>
+</ul>

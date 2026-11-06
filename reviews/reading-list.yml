@@ -1,0 +1,33 @@
+# Papers queued for review, shown at the bottom of the Paper reviews page.
+# One entry per paper. `why` is optional: a few sentences in your own words.
+# A paper is removed from this list when its review is published (/lit:publish).
+
+- title: "InvestigationWorlds: An Agentic Environment for Legal Investigation"
+  authors: "Sun et al."
+  venue: "NeurIPS 2026 (Evaluations & Datasets)"
+  path: "https://arxiv.org/abs/2610.04129"
+  added: 2026-11-06
+
+- title: "CorporateBench: Large-Scale Q&A Benchmarking with Temporal Knowledge Bases"
+  authors: "Hamilton et al."
+  venue: "EMNLP 2026 Findings"
+  path: "https://arxiv.org/abs/2608.27391"
+  added: 2026-11-06
+
+- title: "Harness²: Recursive Agent Harnessing for an Open World"
+  authors: "Xu et al."
+  venue: "arXiv 2026"
+  path: "https://arxiv.org/abs/2610.14224"
+  added: 2026-11-06
+
+- title: "Correct Code, Broken Contributions? SWE-CC: Benchmarking Repository Policy Compliance for Coding Agents"
+  authors: "Truong et al."
+  venue: "arXiv 2026"
+  path: "https://arxiv.org/abs/2610.06193"
+  added: 2026-11-06
+
+- title: "Towards Automating Scientific Review with Google's Paper Assistant Tool"
+  authors: "Jayaram et al."
+  venue: "arXiv 2026"
+  path: "https://arxiv.org/abs/2606.28277"
+  added: 2026-10-22

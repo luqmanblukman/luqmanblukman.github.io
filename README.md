@@ -6,7 +6,7 @@ Personal blog and paper reviews, built with [Quarto](https://quarto.org) and dep
 |---|---|
 | `posts/` | Essays: `posts/<YYYY-MM-DD>-<slug>/index.md` |
 | `reviews/` | Paper reviews, one folder each: `reviews/<YYYY-MM-DD>-<slug>/index.md`, plus any code or experiments |
-| `reviews/reading-list.md` | Papers queued for review, and why |
+| `reviews/reading-list.yml` | Papers queued for review, and why (shown under the reviews) |
 | `references.bib` | BibTeX for citations (`[@key]`) |
 | `AGENTS.md` | How AI assistants may help with this repo, and the review checklist |
 

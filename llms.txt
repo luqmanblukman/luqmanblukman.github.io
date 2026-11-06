@@ -13,7 +13,7 @@ TODO(Luqman): optional extra context in plain prose: background, current focus, 
 ## Paper reviews
 
 - [Paper reviews](https://luqmanblukman.github.io/reviews/): TODO(Luqman): one-line description
-- [Reading list](https://luqmanblukman.github.io/reviews/reading-list.html): TODO(Luqman): one-line description
+- [Reading list](https://luqmanblukman.github.io/reviews/#reading-list): TODO(Luqman): one-line description
 
 ## Contact
 
