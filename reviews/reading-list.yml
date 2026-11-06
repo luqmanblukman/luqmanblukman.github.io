@@ -2,6 +2,13 @@
 # One entry per paper. `why` is optional: a few sentences in your own words.
 # A paper is removed from this list when its review is published (/lit:publish).
 
+- title: "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights"
+  authors: "Takehi et al."
+  venue: "Blog post 2026"
+  path: "https://rikiyat.github.io/blog/weight-space-programming/"
+  added: 2026-11-06
+  why: "I am interested to find out how they did it and if can be applied to any model. If so, can we improve a model's performance for Legal work."
+
 - title: "InvestigationWorlds: An Agentic Environment for Legal Investigation"
   authors: "Sun et al."
   venue: "NeurIPS 2026 (Evaluations & Datasets)"
