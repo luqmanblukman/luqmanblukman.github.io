@@ -1,5 +1,5 @@
--- Render plain ```mermaid fences (GitHub style) as diagrams, so lit-review
--- markdown looks the same on GitHub and on this site.
+-- Render plain ```mermaid fences (GitHub style) as diagrams, so reviews
+-- and posts look the same on GitHub and on this site.
 local function escape(s)
   return (s:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"))
 end

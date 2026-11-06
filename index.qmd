@@ -4,13 +4,20 @@ page-layout: full
 toc: false
 anchor-sections: false
 listing:
-  id: latest-posts
-  contents: posts
-  sort: "date desc"
-  max-items: 5
-  template: _listing-rows.ejs
-  date-format: "YYYY-MM-DD"
-  fields: [date, title, categories, original]
+  - id: latest-reviews
+    contents: "reviews/*/index.md"
+    sort: "date desc"
+    max-items: 5
+    template: _listing-rows.ejs
+    date-format: "YYYY-MM-DD"
+    fields: [date, title, categories, venue]
+  - id: latest-posts
+    contents: posts
+    sort: "date desc"
+    max-items: 5
+    template: _listing-rows.ejs
+    date-format: "YYYY-MM-DD"
+    fields: [date, title, categories, original]
 ---
 
 <!-- TODO(Luqman): the hero eyebrow, headline and intro below are placeholders. Write your own. -->
@@ -20,9 +27,20 @@ listing:
   <div class="eyebrow">Backend engineer · Applied AI × distributed systems</div>
   <h1>Notes on software engineering and reviews of research papers.</h1>
   <p>I build backend systems for a living. This is where I write about the work and keep a public record of the papers I'm reading.</p>
-  <div class="btns"><a class="btn-ruled solid" href="blog.html">Read the blog</a><a class="btn-ruled" href="lit-review/">Literature review</a></div>
+  <div class="btns"><a class="btn-ruled solid" href="blog.html">Read the blog</a><a class="btn-ruled" href="reviews/">Paper reviews</a></div>
 </div></section>
 ```
+
+::: {.home-section}
+::: {.home-section-head}
+## Paper reviews
+
+[All reviews →](reviews/index.qmd)
+:::
+
+::: {#latest-reviews}
+:::
+:::
 
 ::: {.home-section}
 ::: {.home-section-head}
@@ -32,31 +50,5 @@ listing:
 :::
 
 ::: {#latest-posts}
-:::
-:::
-
-::: {.home-section}
-::: {.home-section-head}
-## The experiment
-
-[Read the protocol →](lit-review/PROTOCOL.md)
-:::
-
-{{< include _generated/status.md >}}
-
-<!-- TODO(Luqman): placeholder copy for the experiment panel. -->
-
-::: {.split}
-::: {}
-[30 days · 1.5 h a day · two sprints]{.eyebrow}
-
-### [Can I do PhD-style research, and do I actually want to?](posts/2026-10-26-can-i-do-phd-style-research/index.md)
-
-Every paper, research question and failed experiment is kept in public. The reflections and the pass/fail criteria stay private until Day 30.
-:::
-
-::: {}
-{{< include _generated/terminal.md >}}
-:::
 :::
 :::

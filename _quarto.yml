@@ -1,16 +1,15 @@
 project:
   type: website
   output-dir: _site
-  pre-render: scripts/status.py
   resources:
     - llms.txt
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
     - "posts/**/*.md"
-    - "lit-review/**/*.md"
-    - "!lit-review/CLAUDE.md"
-    # _-prefixed files (templates) and dot-dirs (.claude/) are skipped by Quarto automatically
+    - "reviews/**/*.qmd"
+    - "reviews/**/*.md"
+    # _-prefixed files, dot-dirs (.claude/, .papers/) and README/AGENTS/CLAUDE at the root are not rendered
 
 website:
   title: "Luqman B Lukman"
@@ -20,8 +19,8 @@ website:
     left:
       - href: blog.qmd
         text: Blog
-      - href: lit-review/index.md
-        text: Literature review
+      - href: reviews/index.qmd
+        text: Paper reviews
       - href: about.qmd
         text: About
     right:
@@ -37,23 +36,6 @@ website:
       - icon: rss
         href: blog.xml
         aria-label: RSS feed
-  sidebar:
-    - title: "Literature review"
-      contents:
-        - lit-review/index.md
-        - lit-review/PROTOCOL.md
-        - lit-review/reading-list.md
-        - section: Synthesis
-          contents: "lit-review/synthesis/*.md"
-        - section: Papers
-          href: lit-review/papers/index.md
-          contents: "lit-review/papers/[0-9]*.md"
-        - section: Experiments
-          href: lit-review/experiments/index.md
-          contents: "lit-review/experiments/[0-9]*/index.md"
-        - section: Sprints
-          href: lit-review/sprints/index.md
-          contents: "lit-review/sprints/sprint-*/*.md"
 
 format:
   html:
@@ -61,7 +43,7 @@ format:
       light: [cosmo, theme-light.scss, theme-common.scss]
       dark: [darkly, theme-dark.scss, theme-common.scss]
     toc: true
-    bibliography: lit-review/references.bib
+    bibliography: references.bib
     link-citations: true
     filters:
       - mermaid-fences.lua

@@ -10,10 +10,10 @@ TODO(Luqman): optional extra context in plain prose: background, current focus, 
 - [Coding was never the job](https://luqmanblukman.github.io/posts/2026-06-19-coding-was-never-the-job/): TODO(Luqman): one-line description
 - [4 Reasons Why Software Engineers Need To Be Better Writers](https://luqmanblukman.github.io/posts/2023-07-21-4-reasons-why-software-engineers-need-to-be-better-writers/): TODO(Luqman): one-line description
 
-## Research
+## Paper reviews
 
-- [Literature review](https://luqmanblukman.github.io/lit-review/): TODO(Luqman): one-line description
-- [Protocol](https://luqmanblukman.github.io/lit-review/PROTOCOL.html): TODO(Luqman): one-line description
+- [Paper reviews](https://luqmanblukman.github.io/reviews/): TODO(Luqman): one-line description
+- [Reading list](https://luqmanblukman.github.io/reviews/reading-list.html): TODO(Luqman): one-line description
 
 ## Contact
 

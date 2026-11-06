@@ -1,8 +1,8 @@
 .DS_Store
 /.quarto/
 /_site/
-# Checked out by CI; locally a copy made by ./prepare-lit-review.sh ../lit-review
-/lit-review
 
 **/*.quarto_ipynb
-/_generated/
+# Local copies of papers for the critic agent; never published
+/.papers/
+.claude/settings.local.json

@@ -119,38 +119,6 @@ pre, code { border-radius: 4px; }
   a { font-size: 0.9rem; }
 }
 
-// ruled cells with tick marks at the crossings
-.ruled-cells {
-  border: 1px solid $rule;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.ruled-cell {
-  position: relative;
-  padding: 1.1rem 1.25rem;
-  border-right: 1px solid $rule;
-  display: grid;
-  gap: 0.4rem;
-  align-content: start;
-  &:last-child { border-right: 0; }
-  &:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    width: 9px; height: 9px;
-    right: -5px; bottom: -5px;
-    background:
-      linear-gradient($body-color, $body-color) center / 1px 100% no-repeat,
-      linear-gradient($body-color, $body-color) center / 100% 1px no-repeat;
-    z-index: 1;
-  }
-}
-.stat {
-  font-size: 1.75rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2;
-  font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
-  .of { font: 0.8rem $font-family-monospace; color: $text-muted; letter-spacing: 0; }
-}
-.meter { height: 6px; background: $surface; border: 1px solid $rule; span { display: block; height: 100%; background: $acid; } }
-
 // post rows (custom listing template)
 .rows { margin: 0; padding: 0; list-style: none; border: 1px solid $rule; }
 .rows li {
@@ -162,6 +130,7 @@ pre, code { border-radius: 4px; }
   align-items: baseline;
   &:first-child { border-top: 0; }
 }
+.rows li.empty { display: block; color: $text-muted; font-size: 0.95rem; }
 .rows .when { font: 0.8rem $font-family-monospace; color: $text-muted; font-variant-numeric: tabular-nums; }
 .rows .t { font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; }
 .rows .t:hover { text-decoration: underline; }
@@ -177,34 +146,10 @@ pre, code { border-radius: 4px; }
   &.hl { background: $acid; color: $on-acid; border-color: $acid; }
 }
 
-// experiment panel
-.split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); border: 1px solid $rule; }
-.split > div { padding: 1.6rem 1.5rem; display: grid; gap: 0.75rem; align-content: start; }
-.split > div + div { border-left: 1px solid $rule; background: $surface; }
-.split h3 { margin: 0; font-size: 1.4rem; }
-.split p { margin: 0; color: $text-muted; max-width: 52ch; }
-.term {
-  background: #161514;
-  color: #e8e6e1;
-  border-radius: 6px;
-  padding: 1rem 1.1rem;
-  font: 0.78rem/1.7 $font-family-monospace;
-  overflow-x: auto;
-  .k { color: #9b968f; }
-  .g { color: #b8c94a; }
-  .bar { display: inline-block; height: 9px; vertical-align: middle; background: $acid; }
-  .rest { opacity: 0.35; }
-}
-
 @media (max-width: 720px) {
   .rows li { grid-template-columns: minmax(0, 1fr); }
   .rows .sub { grid-column: 1; }
   .tags { justify-content: start; }
-  .split { grid-template-columns: minmax(0, 1fr); }
-  .split > div + div { border-left: 0; border-top: 1px solid $rule; }
-  .ruled-cell { border-right: 0; border-bottom: 1px solid $rule; }
-  .ruled-cell:last-child { border-bottom: 0; }
-  .ruled-cell:not(:last-child)::after { right: auto; left: -5px; }
 }
 
 // ---------- About: Human / Agent switch ----------
