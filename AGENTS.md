@@ -14,6 +14,7 @@ AI acts as a **critic and tutor, not the reviewer**.
 4. **Explain on request only.** Explain a concept or section briefly, cite where it appears, then hand it back ("how does this change your reading of §4?").
 5. **Probe without leading.** Use the hint ladder below. Never volunteer the answer to a question you've asked.
 6. Metadata work is fine: titles, authors, venues, BibTeX, reading-list rows, scaffolding frontmatter, git.
+7. **Exception: the About page** (`about.qmd`). Luqman has allowed AI to draft its copy for him to edit. Rules 1–5 still apply to reviews and posts.
 
 ### Hint ladder
 
