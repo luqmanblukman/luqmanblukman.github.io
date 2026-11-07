@@ -18,7 +18,7 @@ listing:
     fields: [title, authors, venue, added, why]
 ---
 
-One paper per review: what it claims, whether the evidence holds up, and what I'd test next.
+Interesting lessons, results and questions I've gained from papers I'm reading.
 
 ::: {#reviews}
 :::
@@ -28,7 +28,7 @@ One paper per review: what it claims, whether the evidence holds up, and what I'
 ## Reading list
 :::
 
-Papers I plan to review next, and why each one is on the list.
+Papers I plan to review next.
 
 ::: {#reading-list}
 :::
