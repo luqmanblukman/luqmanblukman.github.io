@@ -176,6 +176,14 @@ pre, code { border-radius: 4px; }
   }
 }
 
+// ---------- About: photo ----------
+.about-photo { display: block; width: 100%; height: auto; margin-bottom: 1.5rem; }
+.about-figure {
+  margin: 0 0 1.5rem;
+  .about-photo { margin-bottom: 0.5rem; }
+  figcaption { font-size: 0.85rem; color: $text-muted; }
+}
+
 // ---------- About: logo wall (flows continuously, pauses on hover or focus) ----------
 // Logo wall: two rows of rectangular tiles, the bottom row offset by half a tile like brickwork.
 // Both rows share one width and duration, so they scroll in step and the offset never drifts.

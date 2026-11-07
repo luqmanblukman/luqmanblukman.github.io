@@ -13,6 +13,12 @@ anchor-sections: false
 
 ::: {#about-human .about-view}
 
+```{=html}
+<img class="about-photo" src="assets/about/luqman.jpg" alt="Luqman smiling at a laptop during a workshop">
+```
+
+I'm Luqman, a software engineer based in Singapore, with nearly ten years of experience at J.P. Morgan, Shopee, TikTok and Airwallex. Most of that time has gone into backend and distributed systems: building software that stays reliable in large, complex production environments.
+
 <!-- Logo wall: two rows, bottom row offset by half a tile. Add or remove <img> lines in either row;
      the script repeats each row enough to fill the width and loop seamlessly. -->
 
@@ -29,9 +35,24 @@ anchor-sections: false
 </div>
 ```
 
-<!-- TODO(Luqman): write the human version: who you are, what you work on, why research. -->
+## Career & Direction
 
-*Placeholder: a few paragraphs in your own voice: who you are, what you do day to day, what you're curious about, and why you're testing whether research is for you.*
+My work has ranged from building high-performance ads recommendation systems at Shopee to planet-scale tax and invoice platforms at TikTok.
+
+Lately my work has moved towards applied AI. I started by building an LLM-based sentiment analyser and an annotation-based Go MCP framework at TikTok. I have now helped bring LLMs into business workflows at Airwallex, including an expense category classifier. I'm increasingly drawn to agent systems: how they plan, use tools and manage context, and how you can tell whether they actually work.
+
+My next goal is to become a research engineer: someone who can read a paper critically, reproduce what it claims, and turn the parts that hold up into systems people can rely on. The blog and the paper reviews are where I practise that in public. Treat them as a record of learning, not finished research.
+
+## Mentorship & Advocacy
+
+```{=html}
+<figure class="about-figure">
+  <img class="about-photo" src="assets/about/mendaki-appointment.jpg" alt="Luqman receiving his appointment as Assistant Lead from Mendaki CEO Feroz Akber and Acting Minister-in-charge of Muslim Affairs Zaqy Mohamad, September 2026">
+  <figcaption>Luqman receiving his appointment as Assistant Lead from Mendaki CEO Feroz Akber and Acting Minister-in-charge of Muslim Affairs Zaqy Mohamad, September 2026</figcaption>
+</figure>
+```
+
+Besides my professional responsibilities, I am actively engaged in helping other Malay-Muslim professionals in Singapore achieve career satisfaction and fulfilment. Towards the end of my degree, I co-founded Tertiary Career Conference (TCC), a first-of-its-kind inter-university career networking session for Malay-Muslim students to figure out the different pathways available to them. Fast-forward several years and I am now the Assistant Lead for the Professional Network in Tech at Yayasan Mendaki (a Singapore self-help group that supports the Malay-Muslim community through education and social programmes). I believe that every Malay-Muslim tech professional deserves to have their experience and abilities visible and recognised among the wider community.
 
 :::
 
