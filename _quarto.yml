@@ -14,6 +14,7 @@ project:
 website:
   title: "Luqman B Lukman"
   site-url: https://luqmanblukman.github.io
+  favicon: assets/favicon.png
   repo-url: https://github.com/luqmanblukman/luqmanblukman.github.io
   navbar:
     left:
