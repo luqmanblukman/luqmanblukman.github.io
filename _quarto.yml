@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - llms.txt
+    - google504ffddf934f426b.html
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
