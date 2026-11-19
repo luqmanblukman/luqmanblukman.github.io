@@ -19,6 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history, needed to restore file times below
+
+      # A fresh checkout stamps every file with the current time, and Quarto
+      # uses file times for <lastmod> in sitemap.xml. Reset each source file's
+      # time to its last commit so lastmod only changes when the page does.
+      - name: Restore file times from git history
+        run: |
+          git ls-files -z -- '*.qmd' '*.md' | while IFS= read -r -d '' f; do
+            touch -d "@$(git log -1 --format=%ct -- "$f")" "$f"
+          done
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
